@@ -24,5 +24,10 @@ namespace desktop_app
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+// textbox.Text = "Hello Ngan!"; 
+        }
     }
 }
