@@ -29,5 +29,11 @@ namespace desktop_app
         {
 // textbox.Text = "Hello Ngan!"; 
         }
+
+        private void ShowMenuButtonClick(object sender, RoutedEventArgs e)
+        {
+            MenuControl.Visibility = MenuControl.Visibility == Visibility.Collapsed ? Visibility.Visible : Visibility.Collapsed;
+        }
+        
     }
 }

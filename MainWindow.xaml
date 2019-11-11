@@ -6,6 +6,8 @@
         xmlns:local="clr-namespace:desktop_app"
         mc:Ignorable="d"
         Title="MainWindow" Height="1024" Width="1440">
+    <Window.Resources>
+    </Window.Resources>
     <Grid ScrollViewer.HorizontalScrollBarVisibility="Auto" Margin="0">
         <Grid HorizontalAlignment="Left" Height="51" Margin="13,13,0,0" VerticalAlignment="Top" Width="1414" Background="#FFF8C291">
             <Grid HorizontalAlignment="Left" Height="41" Margin="994,5,0,-0" VerticalAlignment="Top" Width="412">
@@ -14,14 +16,54 @@
                 <Label x:Name="username_label" Content="Le Thi Phuong Ngan" HorizontalAlignment="Left" Margin="113,6,0,0" VerticalAlignment="Top" Width="231" Height="35" FontSize="20" FontWeight="Bold" FontFamily="Book Antiqua"/>
                 <Menu HorizontalAlignment="Left" Height="51" Margin="1374,0,-60,0" VerticalAlignment="Top" Width="100"/>
             </Grid>
-            <Menu HorizontalAlignment="Left" Height="37" Margin="13,5,0,0" VerticalAlignment="Top" Width="46"/>
-   
+            <Button x:Name="ShowMenuButton" HorizontalAlignment="Left" Height="37" Margin="13,5,0,0" VerticalAlignment="Top" Width="46" Click="ShowMenuButtonClick"/>
+
         </Grid>
         <Grid HorizontalAlignment="Left" Height="908" Margin="13,80,0,0" VerticalAlignment="Top" Width="1414" Background="#7FB8E994"/>
-        <StackPanel  HorizontalAlignment="Left" Background="Aqua" VerticalAlignment="Top"  Margin="15,66,0,0">
-            
+        <StackPanel x:Name="MenuControl" HorizontalAlignment="Left" Background="White" VerticalAlignment="Top"  Margin="15,66,0,0">
+            <Button Style="{StaticResource MenuButton}" >
+                <StackPanel Orientation="Horizontal">
+                    <Image Style="{StaticResource MenuIcon}" Source="images/project.png"></Image>
+                    <TextBlock Style="{StaticResource MenuTextBlock}">Quan ly tai lieu</TextBlock>
+                </StackPanel>
+            </Button>
+            <Separator Style="{StaticResource MenuSeperator}"></Separator>
+            <Button Style="{StaticResource MenuButton}" >
+                <StackPanel Orientation="Horizontal">
+                    <Image Style="{StaticResource MenuIcon}" Source="images/project.png"></Image>
+                    <TextBlock  Style="{StaticResource MenuTextBlock}">Quan ly bai kiem tra</TextBlock>
+                </StackPanel>
+            </Button>
+            <Separator Style="{StaticResource MenuSeperator}"></Separator>
+            <Button Style="{StaticResource MenuButton}" >
+                <StackPanel Orientation="Horizontal">
+                    <Image Style="{StaticResource MenuIcon}" Source="images/project.png"></Image>
+                    <TextBlock Style="{StaticResource MenuTextBlock}">Quan ly diem danh</TextBlock>
+                </StackPanel>
+            </Button>
+            <Separator Style="{StaticResource MenuSeperator}"></Separator>
+            <Button Style="{StaticResource MenuButton}" >
+                <StackPanel Orientation="Horizontal">
+                    <Image Style="{StaticResource MenuIcon}" Source="images/project.png"></Image>
+                    <TextBlock Style="{StaticResource MenuTextBlock}">Quan ly thao luan</TextBlock>
+                </StackPanel>
+            </Button>
+            <Separator Style="{StaticResource MenuSeperator}"></Separator>
+            <Button Style="{StaticResource MenuButton}" >
+                <StackPanel Orientation="Horizontal">
+                    <Image Style="{StaticResource MenuIcon}" Source="images/project.png"></Image>
+                    <TextBlock Style="{StaticResource MenuTextBlock}">Quan ly danh gia</TextBlock>
+                </StackPanel>
+            </Button>
+            <Separator Style="{StaticResource MenuSeperator}"></Separator>
+            <Button Style="{StaticResource MenuButton}" >
+                <StackPanel Orientation="Horizontal">
+                    <Image Style="{StaticResource MenuIcon}" Source="images/project.png"></Image>
+                    <TextBlock Style="{StaticResource MenuTextBlock}">Quan ly thong ke</TextBlock>
+                </StackPanel>
+            </Button>
         </StackPanel>
 
     </Grid>
-    
+
 </Window>
