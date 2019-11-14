@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -20,23 +21,17 @@ namespace desktop_app
     /// </summary>
     public partial class MainWindow : Window
     {
+        Storyboard openMenu;
+        Storyboard closeMenu;
         public MainWindow()
         {
             InitializeComponent();
+
+            //openMenu = this.FindResource("OpenMenu") as Storyboard;
+            //closeMenu = this.FindResource("CloseMenu") as Storyboard;
         }
 
-        private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
-        {
-            ButtonCloseMenu.Visibility = Visibility.Visible;
-            ButtonOpenMenu.Visibility = Visibility.Collapsed;
-        }
-
-        private void ButtonCloseMenu_Click(object sender, RoutedEventArgs e)
-        {
-            ButtonCloseMenu.Visibility = Visibility.Collapsed;
-            ButtonOpenMenu.Visibility = Visibility.Visible;
-        }
-
+    
         private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             UserControl usc = null;
@@ -57,5 +52,16 @@ namespace desktop_app
             }
         }
 
+        private void ButtonToggleMenu_Click(object sender, RoutedEventArgs e)
+        {
+            //if(ButtonToggleMenu.IsChecked ?? false)
+            //{
+            //    openMenu.Begin();
+            //}
+            //else
+            //{
+            //    closeMenu.Begin();
+            //}
+        }
     }
 }
