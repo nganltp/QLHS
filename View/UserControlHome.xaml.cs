@@ -16,24 +16,13 @@ using System.Windows.Shapes;
 namespace desktop_app
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interação lógica para UserControlHome.xam
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class UserControlHome : UserControl
     {
-        public MainWindow()
+        public UserControlHome()
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-// textbox.Text = "Hello Ngan!"; 
-        }
-
-        private void ShowMenuButtonClick(object sender, RoutedEventArgs e)
-        {
-            MenuControl.Visibility = MenuControl.Visibility == Visibility.Collapsed ? Visibility.Visible : Visibility.Collapsed;
-        }
-        
     }
 }
