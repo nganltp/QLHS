@@ -1,4 +1,6 @@
-﻿using System;
+﻿using desktop_app.View;
+using desktop_app.View.Control;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,8 +23,6 @@ namespace desktop_app
     /// </summary>
     public partial class MainWindow : Window
     {
-        Storyboard openMenu;
-        Storyboard closeMenu;
         public MainWindow()
         {
             InitializeComponent();
@@ -39,12 +39,16 @@ namespace desktop_app
 
             switch (((ListViewItem)((ListView)sender).SelectedItem).Name)
             {
-                case "ItemHome":
-                    usc = new UserControlHome();
+                case "DocumentManager":
+                    usc = new DocumentManager();
                     GridMain.Children.Add(usc);
                     break;
                 case "ItemCreate":
                     usc = new UserControlCreate();
+                    GridMain.Children.Add(usc);
+                    break;
+                case "ItemDebug":
+                    usc = new UserControlDebug();
                     GridMain.Children.Add(usc);
                     break;
                 default:
