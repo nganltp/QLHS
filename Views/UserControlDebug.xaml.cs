@@ -13,16 +13,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace desktop_app
+namespace desktop_app.Views
 {
     /// <summary>
-    /// Interação lógica para UserControlHome.xam
+    /// Interaction logic for DebugView.xaml
     /// </summary>
-    public partial class UserControlHome : UserControl
+    public partial class UserControlDebug : UserControl
     {
-        public UserControlHome()
+        public UserControlDebug()
         {
             InitializeComponent();
         }
+
     }
 }

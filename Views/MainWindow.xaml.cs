@@ -1,5 +1,4 @@
-﻿using desktop_app.View;
-using desktop_app.View.Control;
+﻿using desktop_app.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace desktop_app
+namespace desktop_app.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

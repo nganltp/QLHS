@@ -83,20 +83,20 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ViewModel\DocumentManagerViewModel.cs" />
-    <Compile Include="View\Control\DocumentManager.xaml.cs">
+    <Compile Include="ViewModels\DocumentManagerViewModel.cs" />
+    <Compile Include="Views\DocumentManager.xaml.cs">
       <DependentUpon>DocumentManager.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MainWindow.xaml.cs">
+    <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControlCreate.xaml.cs">
+    <Compile Include="Views\UserControlCreate.xaml.cs">
       <DependentUpon>UserControlCreate.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControlDebug.xaml.cs">
+    <Compile Include="Views\UserControlDebug.xaml.cs">
       <DependentUpon>UserControlDebug.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UserControlHome.xaml.cs">
+    <Compile Include="Views\UserControlHome.xaml.cs">
       <DependentUpon>UserControlHome.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -134,23 +134,23 @@
     <Folder Include="Ulti\" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="View\Control\DocumentManager.xaml">
+    <Page Include="Views\DocumentManager.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\MainWindow.xaml">
+    <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\UserControlCreate.xaml">
+    <Page Include="Views\UserControlCreate.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\UserControlDebug.xaml">
+    <Page Include="Views\UserControlDebug.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\UserControlHome.xaml">
+    <Page Include="Views\UserControlHome.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

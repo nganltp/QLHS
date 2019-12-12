@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace desktop_app.ViewModel
+namespace desktop_app.ViewModels
 {
     class DocumentManagerViewModel
     {

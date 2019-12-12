@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace desktop_app.View.Control
+namespace desktop_app.Views
 {
     /// <summary>
-    /// Interaction logic for DocumentManager.xaml
+    /// Interação lógica para UserControlCreate.xam
     /// </summary>
-    public partial class DocumentManager : UserControl
+    public partial class UserControlCreate : UserControl
     {
-        public DocumentManager()
+        public UserControlCreate()
         {
             InitializeComponent();
         }
