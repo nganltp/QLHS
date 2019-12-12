@@ -79,47 +79,26 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\DocumentItem.cs" />
-    <Compile Include="ViewModel\DocumentManagerViewModel.cs" />
-    <Compile Include="View\Control\DocumentManager.xaml.cs">
-      <DependentUpon>DocumentManager.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\UserControlDebug.xaml.cs">
-      <DependentUpon>UserControlDebug.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\UserControlCreate.xaml.cs">
-      <DependentUpon>UserControlCreate.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\UserControlHome.xaml.cs">
-      <DependentUpon>UserControlHome.xaml</DependentUpon>
-    </Compile>
-    <Page Include="View\Control\DocumentManager.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\UserControlDebug.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModel\DocumentManagerViewModel.cs" />
+    <Compile Include="View\Control\DocumentManager.xaml.cs">
+      <DependentUpon>DocumentManager.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\UserControlCreate.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\UserControlHome.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
+    <Compile Include="View\UserControlCreate.xaml.cs">
+      <DependentUpon>UserControlCreate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControlDebug.xaml.cs">
+      <DependentUpon>UserControlDebug.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControlHome.xaml.cs">
+      <DependentUpon>UserControlHome.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -153,6 +132,28 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Ulti\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="View\Control\DocumentManager.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\UserControlCreate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\UserControlDebug.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\UserControlHome.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
