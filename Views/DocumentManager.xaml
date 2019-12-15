@@ -8,21 +8,25 @@
              mc:Ignorable="d" MinHeight="500" MinWidth="1000"
                     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         Background="{DynamicResource MaterialDesignPaper}"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
              >
     <Grid>
-        <ListView
-  ItemsSource="{Binding Items1}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <ListView Grid.Row="1"
+  ItemsSource="{Binding DocumentItems}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn
-        DisplayMemberBinding="{Binding Code}"
-        Header="Code" />
+        DisplayMemberBinding="{Binding Title}"
+        Header="Title" />
                     <GridViewColumn
-        DisplayMemberBinding="{Binding Name}"
-        Header="Name" />
-                    <GridViewColumn
-        DisplayMemberBinding="{Binding Description}"
-        Header="Description" />
+        DisplayMemberBinding="{Binding Link}"
+        Header="Link" />
                 </GridView>
             </ListView.View>
         </ListView>

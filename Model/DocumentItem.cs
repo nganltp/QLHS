@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace desktop_app.Models
 {
-    class DocumentItem
+    public class DocumentItem
     {
         private String link;
-        private String tieuDe;
+        private String title;
 
-        public DocumentItem(string link, string tieuDe)
+        public DocumentItem(string title, string link)
         {
             this.link = link;
-            this.tieuDe = tieuDe;
+            this.title = title;
         }
 
-        public string TieuDe { get => tieuDe; set => tieuDe = value; }
+        public string Title { get => title; set => title = value; }
         public string Link { get => link; set => link = value; }
     }
 }
