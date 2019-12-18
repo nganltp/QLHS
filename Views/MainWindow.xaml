@@ -5,128 +5,135 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:desktop_app.Views"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        mc:Ignorable="d" Height="600" Width="1080" Foreground="White" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="SingleBorderWindow"
+        mc:Ignorable="d" Height="600" Width="1080" Foreground="White" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" WindowStyle="SingleBorderWindow"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         Background="{DynamicResource MaterialDesignPaper}"
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
-        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
-     
-        >
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto">
     <Window.Resources>
-      
-      
+
+
     </Window.Resources>
-    <Grid  >
+    <Grid>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="80"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="80" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <materialDesign:ColorZone Grid.Row="0"  VerticalAlignment="Stretch" Mode="PrimaryMid" Padding="16">
+            <materialDesign:ColorZone Grid.Row="0" VerticalAlignment="Stretch" Mode="PrimaryLight" Padding="16">
                 <Grid>
-                    <ToggleButton x:Name="ButtonToggleMenu" Style="{DynamicResource MaterialDesignHamburgerToggleButton}" HorizontalAlignment="Left" Click="ButtonToggleMenu_Click" >
-                        <ToggleButton.Triggers>
-                            <EventTrigger RoutedEvent="ToggleButton.Checked">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
-                                            <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
-                                            <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="200"/>
-                                        </DoubleAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                            <EventTrigger RoutedEvent="ToggleButton.Unchecked">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
-                                            <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
-                                            <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
-                                        </DoubleAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                        </ToggleButton.Triggers>
-                    </ToggleButton>
+                    <ToggleButton x:Name="ButtonToggleMenu"
+                                  Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
+                                  Style="{DynamicResource MaterialDesignHamburgerToggleButton}"
+                                  HorizontalAlignment="Left" Click="ButtonToggleMenu_Click" Margin="0,6" />
+                    <Popup IsOpen="{Binding ElementName=ButtonToggleMenu, Path=IsChecked}">
+                        <StackPanel Grid.Row="1" HorizontalAlignment="Left" x:Name="GridMenu" Height="Auto" Width="200"
+                                    Background="{DynamicResource PrimaryHueLightBrush}">
+                            <StackPanel.Effect>
+                                <DropShadowEffect BlurRadius="2" ShadowDepth="1" Color="#FFAEAEAE" />
+                            </StackPanel.Effect>
+                            <ListView x:Name="ListViewMenu"
+                                      Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
+                                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                      SelectionChanged="ListViewMenu_SelectionChanged">
+                                <ListViewItem x:Name="DocumentManager" Height="60">
+                                    <StackPanel Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="ViewDashboard" Height="25" Width="25"
+                                                                 Margin="10" />
+                                        <TextBlock Text="Quản lý tài liệu" VerticalAlignment="Center" Margin="20 10" />
+                                    </StackPanel>
+                                </ListViewItem>
+                                <ListViewItem x:Name="ItemCreate" Height="60">
+                                    <StackPanel Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="Pencil" Height="25" Width="25" Margin="10" />
+                                        <TextBlock Text="Quản lý kiểm tra" VerticalAlignment="Center" Margin="20 10" />
+                                    </StackPanel>
+                                </ListViewItem>
+                                <ListViewItem Height="60">
+                                    <StackPanel Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="Ticket" Height="25" Width="25" Margin="10" />
+                                        <TextBlock Text="Quản lý điểm danh" VerticalAlignment="Center" Margin="20 10" />
+                                    </StackPanel>
+                                </ListViewItem>
+                                <ListViewItem Height="60">
+                                    <StackPanel Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="Message" Height="25" Width="25" Margin="10" />
+                                        <TextBlock Text="Quản lý thảo luận" VerticalAlignment="Center" Margin="20 10" />
+                                    </StackPanel>
+                                </ListViewItem>
+                                <ListViewItem Height="60">
+                                    <StackPanel Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="AccountBadgeAlert" Height="25" Width="25"
+                                                                 Margin="10" />
+                                        <TextBlock Text="Quản lý đánh giá" VerticalAlignment="Center" Margin="20 10" />
+                                    </StackPanel>
+                                </ListViewItem>
+                                <ListViewItem Height="60">
+                                    <StackPanel Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="FileReport" Height="25" Width="25" Margin="10" />
+                                        <TextBlock Text="Quản lý thống kê" VerticalAlignment="Center" Margin="20 10" />
+                                    </StackPanel>
+                                </ListViewItem>
+                                <ListViewItem x:Name="ItemDebug" Height="60">
+                                    <StackPanel Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="ControllerClassic" Height="25" Width="25"
+                                                                 Margin="10" />
+                                        <TextBlock Text="Debug" VerticalAlignment="Center" Margin="20 10" />
+                                    </StackPanel>
+                                </ListViewItem>
+                            </ListView>
+                        </StackPanel>
 
-                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center">
-                    Quản lý học sinh
+                    </Popup>
+
+                    <TextBlock Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" VerticalAlignment="Center"
+                               HorizontalAlignment="Left" Grid.ColumnSpan="2"
+                               Margin="74,16,468,15">
+                        Attendant
                     </TextBlock>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                        <TextBlock Text="Lê Thị Phương Ngân" VerticalAlignment="Center" FontSize="16"/>
-                        <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="10">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1">
+                        <materialDesign:Badged
+                            Badge="3"
+                            BadgeColorZoneMode="PrimaryDark" VerticalAlignment="Center" HorizontalAlignment="Center"
+                            Margin="0,0,10,0" Padding="0">
+                            <Button
+                                Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
+                                Style="{StaticResource MaterialDesignIconButton}"
+                                ToolTip="MaterialDesignIconButton" Width="30" Height="30">
+                                <materialDesign:PackIcon Kind="NotificationsActive" />
+                            </Button>
+                        </materialDesign:Badged>
+                        <materialDesign:Badged
+                            Badge="3"
+                            BadgeColorZoneMode="PrimaryDark" VerticalAlignment="Center" HorizontalAlignment="Center"
+                            Margin="0,0,10,0" Padding="0">
+                            <Button
+                                Style="{StaticResource MaterialDesignIconButton}"
+                                ToolTip="MaterialDesignIconButton" Width="30" Height="30">
+                                <materialDesign:PackIcon Kind="Email" Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" />
+                            </Button>
+                        </materialDesign:Badged>
+
+                        <TextBlock Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}"
+                                   Text="Lê Thị Phương Ngân" VerticalAlignment="Center" FontSize="16" />
+                        <materialDesign:PopupBox Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="10">
                             <StackPanel Width="150">
-                                <Button Content="Settings"/>
-                                <Button Content="Account"/>
-                                <Button Content="Help"/>
-                                <Separator/>
-                                <Button Content="Logout"/>
+                                <Button Content="Settings" />
+                                <Button Content="Account" />
+                                <Button Content="Help" />
+                                <Separator />
+                                <Button Content="Logout" />
                             </StackPanel>
                         </materialDesign:PopupBox>
                     </StackPanel>
                 </Grid>
 
             </materialDesign:ColorZone>
-            <Grid Grid.Row="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid Grid.Column="0" Visibility="Visible" x:Name="GridMenu"  Width="0" Background="{DynamicResource PrimaryHueMidBrush}">
-                    <Grid.Effect>
-                        <DropShadowEffect BlurRadius="2" ShadowDepth="1" Color="#FFAEAEAE"/>
-                    </Grid.Effect>
-                    <StackPanel>
-                        <ListView x:Name="ListViewMenu" Foreground="{DynamicResource PrimaryHueDarkForegroundBrush}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMenu_SelectionChanged">
-                            <ListViewItem x:Name="DocumentManager" Height="60">
-                                <StackPanel Orientation="Horizontal">
-                                    <materialDesign:PackIcon Kind="ViewDashboard" Height="25" Width="25" Margin="10"/>
-                                    <TextBlock Text="Quản lý tài liệu" VerticalAlignment="Center" Margin="20 10"/>
-                                </StackPanel>
-                            </ListViewItem>
-                            <ListViewItem x:Name="ItemCreate" Height="60">
-                                <StackPanel Orientation="Horizontal">
-                                    <materialDesign:PackIcon Kind="Pencil" Height="25" Width="25" Margin="10"/>
-                                    <TextBlock Text="Quản lý kiểm tra" VerticalAlignment="Center" Margin="20 10"/>
-                                </StackPanel>
-                            </ListViewItem>
-                            <ListViewItem Height="60">
-                                <StackPanel Orientation="Horizontal">
-                                    <materialDesign:PackIcon Kind="Ticket" Height="25" Width="25" Margin="10"/>
-                                    <TextBlock Text="Quản lý điểm danh" VerticalAlignment="Center"  Margin="20 10"/>
-                                </StackPanel>
-                            </ListViewItem>
-                            <ListViewItem Height="60">
-                                <StackPanel Orientation="Horizontal">
-                                    <materialDesign:PackIcon Kind="Message" Height="25" Width="25" Margin="10"/>
-                                    <TextBlock Text="Quản lý thảo luận" VerticalAlignment="Center"  Margin="20 10"/>
-                                </StackPanel>
-                            </ListViewItem>
-                            <ListViewItem Height="60">
-                                <StackPanel Orientation="Horizontal">
-                                    <materialDesign:PackIcon Kind="AccountBadgeAlert" Height="25" Width="25" Margin="10"/>
-                                    <TextBlock Text="Quản lý đánh giá" VerticalAlignment="Center"  Margin="20 10"/>
-                                </StackPanel>
-                            </ListViewItem>
-                            <ListViewItem Height="60">
-                                <StackPanel Orientation="Horizontal">
-                                    <materialDesign:PackIcon Kind="FileReport" Height="25" Width="25" Margin="10"/>
-                                    <TextBlock Text="Quản lý thống kê" VerticalAlignment="Center"  Margin="20 10"/>
-                                </StackPanel>
-                            </ListViewItem>
 
-                            <ListViewItem x:Name="ItemDebug" Height="60">
-                                <StackPanel Orientation="Horizontal">
-                                    <materialDesign:PackIcon Kind="ControllerClassic" Height="25" Width="25" Margin="10"/>
-                                    <TextBlock Text="Debug" VerticalAlignment="Center"  Margin="20 10"/>
-                                </StackPanel>
-                            </ListViewItem>
-                        </ListView>
-                    </StackPanel>
-                </Grid>
-                <Grid Grid.Column="1" x:Name="GridMain"  HorizontalAlignment="Stretch"/>
-            </Grid> 
+            <Grid Grid.Row="1" x:Name="GridMain" HorizontalAlignment="Stretch" />
+
         </Grid>
     </Grid>
 
