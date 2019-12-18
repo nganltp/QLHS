@@ -10,25 +10,63 @@
         Background="{DynamicResource MaterialDesignPaper}"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
+             d:DataContext="{StaticResource ResourceKey=DocumentManagerViewModel}"
              >
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="200" />
+            <RowDefinition Height="50" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        
-        <ListView Grid.Row="1"
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="300"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Button
+            Grid.Column="1"
+            HorizontalAlignment="Left"
+            Style="{StaticResource MaterialDesignRaisedButton}"
+            Width="150"
+            ToolTip="Resource name: MaterialDesignRaisedButton">
+            Thêm tài liệu
+        </Button>
+        <CheckBox
+            Grid.Column="2"
+            HorizontalAlignment="Left"
+            Style="{StaticResource MaterialDesignCheckBox}">
+            Chọn tất cả
+        </CheckBox>
+        <Button
+            Grid.Column="2"
+            HorizontalAlignment="Right"
+            Style="{StaticResource MaterialDesignRaisedButton}"
+            Width="150"
+            ToolTip="Resource name: MaterialDesignRaisedButton">
+            Xóa
+        </Button>
+        <ListView Grid.Row="1" Grid.Column="2"
   ItemsSource="{Binding DocumentItems}">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn
-        DisplayMemberBinding="{Binding Title}"
-        Header="Title" />
-                    <GridViewColumn
-        DisplayMemberBinding="{Binding Link}"
-        Header="Link" />
-                </GridView>
-            </ListView.View>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" >
+                        <CheckBox HorizontalAlignment="Left" Style="{StaticResource MaterialDesignCheckBox}"></CheckBox>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="{Binding Title}"></TextBlock>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock>Ngày đăng: </TextBlock>
+                                <TextBlock Text="{Binding UploadDate, StringFormat='yyyy-MM-dd HH:mm:ss '}"></TextBlock>
+                            </StackPanel>
+                            <TextBlock Text="{Binding Link}"></TextBlock>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <TextBlock>Chỉnh sửa lần cuối</TextBlock>
+                                <TextBlock Text="{Binding EditDate, StringFormat='yyyy-MM-dd HH:mm:ss '}"></TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
     </Grid>
 </UserControl>

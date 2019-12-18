@@ -15,8 +15,8 @@ namespace desktop_app.ViewModels
         {
             DocumentItems = new ObservableCollection<DocumentItem>()
             {
-                new DocumentItem("Google", "https://google.com"),
-                new DocumentItem("Facebook", "https://facebook.com")
+                new DocumentItem("Google", "https://google.com", DateTime.Today, DateTime.Today),
+                new DocumentItem("Facebook", "https://facebook.com", DateTime.Today, DateTime.Today)
             };
         }
         
